@@ -1,0 +1,13 @@
+{% extends "calculator/layout.html" %}
+{% load static %}
+
+{% block content %}
+<link href="{% static 'cal/form.css' %}" rel="stylesheet">
+    <div class="form-signin">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="button">Submit</button>
+        </form>
+    </div>
+{% endblock content %}

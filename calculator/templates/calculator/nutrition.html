@@ -1,0 +1,31 @@
+{% extends "calculator/layout.html" %}
+{% load static %}
+
+{% block content %}
+
+
+
+<link href="{% static 'cal/form.css' %}" rel="stylesheet">
+<div class="container">
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+
+    {% if food_data %}
+        {% for item in food_data %}
+            <div class="food-item">
+                <h3>{{ item.name }}</h3>
+                <h3>Calories:{{ item.calories }}</h3>
+                <h3>Protein:{{ item.protein_g }}</h3>
+                <h3>Fat:{{ item.fat_total_g }}</h3>
+                <h3>Carbohydrates:{{ item.carbohydrates_total_g }}</h3>
+                <!-- Add other fields as needed -->
+            </div>
+        {% endfor %}
+    {% endif %}
+</div>
+
+
+    
+
+{% endblock content %}

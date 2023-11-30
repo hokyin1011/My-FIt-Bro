@@ -1,0 +1,30 @@
+
+{% extends "calculator/layout.html" %}
+
+{% load static %}
+
+{% block content %}
+<link href="{% static 'cal/form.css' %}" rel="stylesheet">
+<body>
+    <div class="container">
+        <ul>
+            {% for p in person %}
+            <li class="food-item">
+                <p>Name: {{ p.name }}</p>
+                <p>Age: {{ p.age }}</p>
+                <p>Weight: {{ p.weight }} kg</p>
+                <p>Height: {{ p.height }} cm</p>
+                <p>Gender: {{ p.gender }}</p>
+                <p>Activity Level: {{ p.activity }}</p>
+                <p>TDEE: {{ p.tdee }}</p>
+                <p>To lose weight: {{ p.lose_tdee }}</p>
+                <p>To gain weight: {{ p.gain_tdee}}</p>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock content %}
+
+
+
+</html>
